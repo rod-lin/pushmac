@@ -15,7 +15,8 @@ for k, v in pmac_bytecode.items():
 	globals()["pmac_bytecode_" + k] = v
 
 def err(msg):
-	raise Exception(msg)
+	print("error: " + msg)
+	sys.abort()
 
 def splitx(src, char = [ " ", "\t", "\n", "\r" ]):
 	ret = []
@@ -59,7 +60,7 @@ def parse(src):
 
 	return ret
 
-driver = jit.JitDriver(greens = [ "pc", "sp", "bc", "ins"], reds = "auto")
+driver = jit.JitDriver(greens = [ "pc", "sp", "bc", "ins" ], reds = "auto")
 
 def run(bc):
 	pc = 0
