@@ -1,0 +1,17 @@
+ldi 1
+set i
+
+get i
+ldi 10
+lt
+not
+jt 7
+
+get i
+out
+
+ldi 1
+add
+set i
+
+jmp -10
