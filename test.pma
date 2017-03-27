@@ -2,16 +2,14 @@ ldi 1
 set i
 
 get i
-ldi 10
+ldi 100000000
 lt
 not
-jt 7
+jt 6
 
 get i
-out
-
 ldi 1
 add
 set i
 
-jmp -10
+jmp -9

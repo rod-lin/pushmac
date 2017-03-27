@@ -91,3 +91,6 @@ ENV/
 # upload scripts
 upload.sh
 upload.log
+
+# RPython output
+*-c
