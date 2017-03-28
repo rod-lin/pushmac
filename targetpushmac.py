@@ -76,7 +76,7 @@ def parse(src):
 
 	return ret
 
-driver = jit.JitDriver(greens = [ "pc", "sp", "bc", "ins" ], reds = "auto")
+driver = jit.JitDriver(greens = [ "pc", "bc" ], reds = "auto")
 
 def _rt_check_stack(sp, req, msg = "insufficient stack"):
 	if sp < req:
@@ -90,7 +90,7 @@ def run(bc):
 	glob = {}
 
 	while pc < len(bc):
-		driver.jit_merge_point(pc = pc, sp = sp, bc = bc, ins = ins)
+		driver.jit_merge_point(pc = pc, bc = bc)
 
 		ins = bc[pc]
 
